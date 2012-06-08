@@ -1,10 +1,15 @@
 This is the very preliminary design for my reprap. its loosly based on a mendel 90 and prusa 2 hybrid design with a few
 added features.
 
-The name pjrun comes from my initial (pjr) and un (unified) as its actually my 4th design, this one is roughly a month old
+The name pjrun comes from my initials (pjr) and un (unified) as its actually my 4th design, this one is roughly a month old
 and as i currently have a m90, this design is my attempted at fixing some of its shortcomings, while adding a few extra features
 
 All the cad files are freecad and are designed based on 8mm rods and 12mm mdf.
 
 The base MDF isnt actually needed, but it can be either half-width (only covering one half of the y axis) or full width (the
 entire length of the y axis).
+
+This model can actually fold down, the threaded diagonal support need only be fixed at the bottom and at the top it can simply
+have 2 nuts to hold the inside position and the outside nut can be removed/put on when the unit it folded down/put up.
+
+Currently this does not have a x/z axis - if you use a standard m90 axis (either vertical x or horizontal, these should work)
