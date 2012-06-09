@@ -14,3 +14,9 @@ This model can actually fold down, the threaded diagonal support need only be fi
 have 2 nuts to hold the inside position and the outside nut can be removed/put on when the unit it folded down/put up.
 
 Currently this does not have a x/z axis - if you use a standard m90 axis (either vertical x or horizontal, these should work)
+
+The other modification I want to try and make is to the extruder element. Between the bowden and the wades/gregs extruder there
+doesnt appear to be many options, my design uses a square rod, driven from the end of the X axis to drive the extruder. This
+should give it all the advantages of both the extruders (light weight on the x-in-motion element) without having to run a pipe for
+the filament. what this means is that on the x axis, the extruder motor will be at one end, driving the square rod while the
+other end has the x motor.
