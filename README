@@ -20,3 +20,5 @@ doesnt appear to be many options, my design uses a square rod, driven from the e
 should give it all the advantages of both the extruders (light weight on the x-in-motion element) without having to run a pipe for
 the filament. what this means is that on the x axis, the extruder motor will be at one end, driving the square rod while the
 other end has the x motor.
+
+Alot of the mesh'ed models can be viewed here: http://pjr.cc/mv/ thanks to thingiverse and their WebGL javascript code
