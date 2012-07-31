@@ -2,13 +2,13 @@ use <original/Thingiverse-Projects/Threaded Library/Thread_Library.scad>
 use <original/MCAD/involute_gears.scad>
 
 
-numberTeeth=18;
+numberTeeth=10;
 pitchRadius=10;
 thickness=6;
 
 
-length=30;
-radius=5;
+length=34;
+radius=12;
 pitch=2*3.1415*pitchRadius/numberTeeth;
 
 angle=-360*$t;
@@ -29,8 +29,8 @@ trapezoidThread(
 						// std value for Acme is 29 or for metric lead screw is 30
 	RH=true, 				// true/false the thread winds clockwise looking along shaft, i.e.follows the Right Hand Rule
 	clearance=0.2, 			// radial clearance, normalized to thread height
-	backlash=0.06, 			// axial clearance, normalized to pitch
-	stepsPerTurn=24 			// number of slices to create per turn
+	backlash=0.05, 			// axial clearance, normalized to pitch
+	stepsPerTurn=96 			// number of slices to create per turn
 	);
 
 }
