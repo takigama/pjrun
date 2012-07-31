@@ -1,19 +1,20 @@
 use <original/Thingiverse-Projects/Threaded Library/Thread_Library.scad>
 use <original/MCAD/involute_gears.scad>
 
-numberTeeth=16;
-pitchRadius=22;
-thickness=8;
+numberTeeth=18;
+pitchRadius=10;
+thickness=6;
 
 
-length=60;
-radius=12;
+length=30;
+radius=5;
 pitch=2*3.1415*pitchRadius/numberTeeth;
 
 angle=-360*$t;
-offset=4;
+offset=6;
 
 distance=radius+pitchRadius+0.0*pitch;
+
 
 gear ( 
 	number_of_teeth=numberTeeth,
@@ -24,10 +25,11 @@ gear (
 	rim_thickness=thickness,
 	rim_width=5,
 	hub_thickness=thickness,
-	hub_diameter=5,
-	bore_diameter=16.5,
+	hub_diameter=8,
+	bore_diameter=8,
 	circles=0,
 	backlash=0.1,
 	twist=-pitchRadius/radius,
 	involute_facets=0,
 	flat=false);
+

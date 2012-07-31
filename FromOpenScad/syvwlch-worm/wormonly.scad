@@ -1,22 +1,23 @@
 use <original/Thingiverse-Projects/Threaded Library/Thread_Library.scad>
 use <original/MCAD/involute_gears.scad>
 
-numberTeeth=16;
-pitchRadius=22;
-thickness=15;
+
+numberTeeth=18;
+pitchRadius=10;
+thickness=6;
 
 
-length=60;
-radius=12;
+length=30;
+radius=5;
 pitch=2*3.1415*pitchRadius/numberTeeth;
 
 angle=-360*$t;
-offset=4;
+offset=6;
 
 distance=radius+pitchRadius+0.0*pitch;
 
-rotate(a=[0,90,0]) {
-#trapezoidThread( 
+rotate([0,90,0]) {
+trapezoidThread( 
 	length=length, 			// axial length of the threaded rod
 	pitch=pitch,				 // axial distance from crest to crest
 	pitchRadius=radius, 		// radial distance from center to mid-profile
@@ -29,6 +30,7 @@ rotate(a=[0,90,0]) {
 	RH=true, 				// true/false the thread winds clockwise looking along shaft, i.e.follows the Right Hand Rule
 	clearance=0.2, 			// radial clearance, normalized to thread height
 	backlash=0.06, 			// axial clearance, normalized to pitch
-	stepsPerTurn=96 			// number of slices to create per turn
+	stepsPerTurn=24 			// number of slices to create per turn
 	);
+
 }
