@@ -15,6 +15,7 @@ offset=4;
 
 distance=radius+pitchRadius+0.0*pitch;
 
+rotate(a=[0,90,0]) {
 #trapezoidThread( 
 	length=length, 			// axial length of the threaded rod
 	pitch=pitch,				 // axial distance from crest to crest
@@ -30,4 +31,4 @@ distance=radius+pitchRadius+0.0*pitch;
 	backlash=0.06, 			// axial clearance, normalized to pitch
 	stepsPerTurn=96 			// number of slices to create per turn
 	);
-
+}
