@@ -2,13 +2,13 @@ use <original/Thingiverse-Projects/Threaded Library/Thread_Library.scad>
 use <original/MCAD/involute_gears.scad>
 
 
-numberTeeth=10;
-pitchRadius=10;
+numberTeeth=18;
+pitchRadius=18;
 thickness=6;
 
 
 length=34;
-radius=6;
+radius=7;
 pitch=2*3.1415*pitchRadius/numberTeeth;
 
 angle=-360*$t;
