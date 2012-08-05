@@ -8,7 +8,7 @@ thickness=6;
 
 
 length=34;
-radius=7;
+radius=6;
 pitch=2*3.1415*pitchRadius/numberTeeth;
 
 angle=-360*$t;
