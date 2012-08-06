@@ -7,7 +7,7 @@ pitchRadius=18;
 thickness=6;
 
 
-length=34;
+length=64;
 radius=6;
 pitch=2*3.1415*pitchRadius/numberTeeth;
 

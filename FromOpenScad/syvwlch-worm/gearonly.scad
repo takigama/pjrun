@@ -1,10 +1,11 @@
 use <original/Thingiverse-Projects/Threaded Library/Thread_Library.scad>
 use <original/MCAD/involute_gears.scad>
 
-numberTeeth=18;
-pitchRadius=18;
+//numberTeeth=18;
+//pitchRadius=18;
 thickness=6;
 
+echo ("teeth:", numberTeeth, " and rad:", pitchRadius);
 
 length=34;
 radius=6;
