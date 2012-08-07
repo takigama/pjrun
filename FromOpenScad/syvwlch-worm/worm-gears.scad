@@ -38,10 +38,10 @@ if(printWorm > 0) {
 		translate([0,0,wormOffset-0.2]) cylinder(h=abs(wormOffset)+0.2, r=radius*5, $fn=30);
 		translate([0,0,wormConeBegin+5+7]) cylinder(h=50, r=radius*5, $fn=30);
 		translate([0,0,wormConeBegin+5+7-25]) cylinder(h=25, r=2.7, $fn=30);
+		translate([0,0,wormConeBegin+5+7-3]) rotate(a=[0,90,0]) cylinder(h=10,r=1.75, $fn=30);
 	}
 }
 
-//translate([0,0,wormConeBegin+5+7-25]) cylinder(h=26, r=2.7, $fn=30);
 
 if(printGear > 0) {
 	difference () {
