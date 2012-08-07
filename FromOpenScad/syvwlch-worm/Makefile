@@ -25,4 +25,4 @@ stls/wormonly-$(CUSTOM_TEETH)-$(CUSTOM_RADIUS).stl: Makefile
 	openscad -o stls/wormonly-$(CUSTOM_TEETH)-$(CUSTOM_RADIUS).stl -D numberTeeth=$(CUSTOM_TEETH) -D pitchRadius=$(CUSTOM_RADIUS) -D printGear=0 -D printWorm=1 worm-gears.scad
 
 stls/gearonly-$(CUSTOM_TEETH)-$(CUSTOM_RADIUS).stl: Makefile
-	openscad -o stls/wormonly-$(CUSTOM_TEETH)-$(CUSTOM_RADIUS).stl -D numberTeeth=$(CUSTOM_TEETH) -D pitchRadius=$(CUSTOM_RADIUS) -D printWorm=0 -D printWorm=1 worm-gears.scad
+	openscad -o stls/gearonly-$(CUSTOM_TEETH)-$(CUSTOM_RADIUS).stl -D numberTeeth=$(CUSTOM_TEETH) -D pitchRadius=$(CUSTOM_RADIUS) -D printWorm=0 -D printWorm=1 worm-gears.scad

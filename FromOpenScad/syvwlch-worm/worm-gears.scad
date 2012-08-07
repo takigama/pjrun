@@ -59,7 +59,7 @@ if(printGear > 0) {
 	                rim_width=5,
 	                hub_thickness=thickness,
 	                hub_diameter=8,
-	                bore_diameter=8.2,
+	                bore_diameter=8.5,
 	                circles=0,
 	                backlash=0.1,
 	                twist=-pitchRadius/radius,
