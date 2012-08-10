@@ -9,9 +9,9 @@ length=44;
 radius=6;
 pitch=2*3.1415*pitchRadius/numberTeeth;
 printWorm = 1;
-printGear = 1;
+printGear = 0;
 nutSize = 13;
-wormConeBegin=25;
+wormConeBegin=23;
 wormOffset=-2;
 
 echo ("teeth:", numberTeeth, " and rad:", pitchRadius);
@@ -28,17 +28,17 @@ if(printWorm > 0) {
 		union() {
 
 			translate([0,0,wormOffset]) trapezoidThread( length=length, pitch=pitch, pitchRadius=radius, threadHeightToPitch=0.5, profileRatio=0.5, threadAngle=20, RH=true, clearance=0.2, backlash=0.05, stepsPerTurn=96);
-			translate([0,0,wormConeBegin+5]) cylinder(h=7, r=9);
+			translate([0,0,wormConeBegin+6]) cylinder(h=7, r=10);
 
 			cylinder(h=0.2,r=15);
-			translate([0,0,wormConeBegin]) cylinder(h=5, r1=4, r2=9);
+			translate([0,0,wormConeBegin]) cylinder(h=6, r1=4, r2=10);
 		}
 
-		translate([3.2,-2.8,wormConeBegin+5+7-6.5]) cube(size=[2.8,5.6,7]);
+		translate([3.0,-2.8,wormConeBegin+6+7-6.5]) cube(size=[2.8,5.6,7]);
 		translate([0,0,wormOffset-0.2]) cylinder(h=abs(wormOffset)+0.2, r=radius*5, $fn=30);
-		translate([0,0,wormConeBegin+5+7]) cylinder(h=50, r=radius*5, $fn=30);
-		translate([0,0,wormConeBegin+5+7-25]) cylinder(h=25, r=2.7, $fn=30);
-		translate([0,0,wormConeBegin+5+7-3]) rotate(a=[0,90,0]) cylinder(h=10,r=1.75, $fn=30);
+		translate([0,0,wormConeBegin+6+7]) cylinder(h=50, r=radius*5, $fn=30);
+		translate([0,0,wormConeBegin+6+7-25]) cylinder(h=25, r=2.7, $fn=30);
+		translate([0,0,wormConeBegin+6+7-3]) rotate(a=[0,90,0]) cylinder(h=10,r=1.75, $fn=30);
 	}
 }
 
