@@ -1,12 +1,12 @@
 wallThickness = 4;
-hangerThickness = 2;
-hangerLength = 8;
-hangerHeight = 12;
-edgeHeight = 20; // size of edge lengths
-edgeSize = 42;
-edgeOverHang = 8;
+hangerThickness = 5;
+hangerLength = 10;
+hangerHeight = 16;
+edgeHeight = 26; // size of edge lengths
+edgeSize = 64;
+edgeOverHang = 10;
 edgeThickness = 2;
-feathering = 0.2; // extra width on holes
+feathering = 0.4; // extra width on holes
 screwSize= 4;
 
 pylonHeight = 150;
@@ -15,8 +15,8 @@ pylonDepth = 30;
 pylonTop = 15; // the bit at the top that holds filament batton
 pylonConnectorRadius =4;
 
-pylonCaptureSize = 2;
-pylonCaptureHeight = 6;
+pylonCaptureSize = 6;
+pylonCaptureHeight = 10;
 
 battonLength = 80;
 battonWidth = 8;
@@ -29,8 +29,8 @@ resolution=50;
 
 
 // some calcs
-endDiff = edgeSize - hangerLength-(edgeSize*0.1);
-screwDiff = (edgeOverHang-screwSize);
+endDiff = edgeSize - hangerLength-(edgeSize*0.15);
+screwDiff = ((edgeOverHang/2));
 battonCapZdiff = (battonCaptureDistance+(pylonConnectorRadius + (pylonConnectorRadius*2.5-pylonConnectorRadius)/2))*tan(battonAngle)-1;
 
 
@@ -40,10 +40,10 @@ battonCapZdiff = (battonCaptureDistance+(pylonConnectorRadius + (pylonConnectorR
 printPort();
 
 module printPort() {
-//	topClip();
-//	translate([-edgeHeight*1.1, -edgeHeight*1.1, 0]) bottomClip();
-	translate([-pylonHeight/1.8,-pylonHeight/3.6,0]) rotate(a=[90,0,0]) pylon();
-//	translate([-edgeSize,-edgeSize,0]) batton();
+	//topClip();
+	//translate([-edgeHeight*1.1, -edgeHeight*1.1, 0]) bottomClip();
+	//translate([-pylonHeight/1.8,-pylonHeight/3.6,0]) rotate(a=[0,0,45]) pylon();
+	translate([-edgeSize,-edgeSize,0]) batton();
 }
 
 //translate([edgeSize/2+-edgeSize, -edgeSize, 0]) 
@@ -134,11 +134,11 @@ module bottomClip() {
 		translate([edgeHeight,edgeHeight,-wallThickness]) cube([edgeSize, edgeSize,wallThickness*3], $fn=resolution);
 
 		// screws
-		translate([screwDiff*1.2,screwDiff*1.2,  -edgeThickness]) cylinder(r = (screwSize/2)+feathering, h=4*edgeThickness, $fn=resolution);
+		translate([screwDiff*1.2,screwDiff*1.2,  -wallThickness]) cylinder(r = (screwSize/2)+feathering, h=4*edgeThickness, $fn=resolution);
 
-		translate([screwDiff, edgeSize-(1.5*screwSize),  -edgeThickness]) cylinder(r = (screwSize/2)+feathering, h=4*edgeThickness, $fn=resolution);
+		translate([screwDiff, edgeSize-(1.5*screwSize),  -wallThickness]) cylinder(r = (screwSize/2)+feathering, h=4*edgeThickness, $fn=resolution);
 
-		translate([edgeSize-(1.5*screwSize), screwDiff, -edgeThickness]) cylinder(r = (screwSize/2)+feathering, h=4*edgeThickness, $fn=resolution);
+		translate([edgeSize-(1.5*screwSize), screwDiff, -wallThickness]) cylinder(r = (screwSize/2)+feathering, h=4*edgeThickness, $fn=resolution);
 
 	}
 
