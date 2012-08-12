@@ -1,10 +1,10 @@
 wallThickness = 4;
 hangerThickness = 5;
 hangerLength = 10;
-hangerHeight = 16;
+hangerHeight = 18;
 edgeHeight = 26; // size of edge lengths
-edgeSize = 64;
-edgeOverHang = 10;
+edgeSize = 54;
+edgeOverHang = 11;
 edgeThickness = 2;
 feathering = 0.4; // extra width on holes
 screwSize= 4;
@@ -15,12 +15,13 @@ pylonDepth = 30;
 pylonTop = 15; // the bit at the top that holds filament batton
 pylonConnectorRadius =4;
 
-pylonCaptureSize = 6;
-pylonCaptureHeight = 10;
+pylonCaptureSize = 5;
+pylonCaptureHeight = 8;
+pylonCaptureDepth = 3;
 
 battonLength = 80;
 battonWidth = 8;
-battonAngle = 20;
+battonAngle = 45;
 battonCaptureSize = 40;
 battonCaptureDistance = 20;
 resolution=50;
@@ -79,16 +80,16 @@ module topClip() {
 			translate([edgeOverHang-feathering,endDiff-feathering,  -edgeThickness]) cube([hangerThickness+feathering*2,hangerLength+feathering*2,hangerHeight], $fn=resolution);
 
 		}
-
+//translate([edgeSize/2-pylonWidth/2-feathering, edgeSize-pylonCaptureHeight-pylonCaptureDepth, wallThickness]) cube([pylonWidth+feathering*2, pylonCaptureHeight, pylonWidth+feathering*2], $fn=resolution);
 		// pylon capture, y bottom
 		difference() {
 			translate([edgeSize/2-pylonWidth/2-pylonCaptureSize-feathering, edgeSize-pylonCaptureHeight, wallThickness]) cube([pylonWidth+pylonCaptureSize*2+feathering*2, pylonCaptureHeight, pylonWidth+pylonCaptureSize+feathering*2], $fn=resolution);
-			translate([edgeSize/2-pylonWidth/2-feathering, edgeSize-pylonCaptureHeight-pylonCaptureSize, wallThickness]) cube([pylonWidth+feathering*2, pylonCaptureHeight, pylonWidth+feathering*2], $fn=resolution);
+			translate([edgeSize/2-pylonWidth/2-feathering, edgeSize-pylonCaptureHeight-pylonCaptureDepth, wallThickness]) cube([pylonWidth+feathering*2, pylonCaptureHeight, pylonWidth+feathering*2], $fn=resolution);
 		}
 		// pylon capture, x bottom
 		difference() {
 			translate([edgeSize-pylonCaptureHeight, edgeSize/2-pylonWidth/2-pylonCaptureSize-feathering, wallThickness]) cube([pylonCaptureHeight, pylonWidth+pylonCaptureSize*2+feathering*2, pylonWidth+pylonCaptureSize+feathering*2], $fn=resolution);
-			translate([edgeSize-pylonCaptureHeight-pylonCaptureSize, edgeSize/2-pylonWidth/2-feathering, wallThickness]) cube([pylonCaptureHeight, pylonWidth+feathering*2, pylonWidth+feathering*2], $fn=resolution);
+			translate([edgeSize-pylonCaptureHeight-pylonCaptureDepth, edgeSize/2-pylonWidth/2-feathering, wallThickness]) cube([pylonCaptureHeight, pylonWidth+feathering*2, pylonWidth+feathering*2], $fn=resolution);
 		}
 
 		// pylon capture, y top
@@ -109,12 +110,15 @@ module batton() {
 
 	union() {
 		difference() {
-			cylinder(r=pylonConnectorRadius*2.5, h=pylonTop, $fn=resolution);
+			union() {
+				cylinder(r=pylonConnectorRadius*2.5, h=pylonTop, $fn=resolution);
+				translate([pylonConnectorRadius + (pylonConnectorRadius*2.5-pylonConnectorRadius)/2,0,battonWidth/2]) 
+				rotate(a=[0, 90-battonAngle, 0]) cylinder(r=battonWidth/2, h=battonLength, $fn=resolution);
+
+			}
 			translate([0,0,-1]) cylinder(r=pylonConnectorRadius+feathering, h=pylonTop+2, $fn=resolution);
 			translate([-(pylonWidth+feathering*2)/2,-(pylonWidth+feathering*2)/2,-5]) cube([pylonWidth+feathering*2, pylonWidth+feathering*2, 9]);
 		}
-		translate([pylonConnectorRadius + (pylonConnectorRadius*2.5-pylonConnectorRadius)/2,0,battonWidth/2]) 
-		rotate(a=[0, 90-battonAngle, 0]) cylinder(r=battonWidth/2, h=battonLength, $fn=resolution);
 
 		translate([battonCaptureDistance,0,battonCapZdiff]) cylinder(r=battonWidth/2, h=battonCaptureSize, $fn=resolution);
 	}
