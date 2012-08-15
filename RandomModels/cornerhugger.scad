@@ -21,8 +21,8 @@ pylonCaptureDepth = 3;
 
 battonLength = 80;
 battonWidth = 8;
-battonAngle = 45;
-battonCaptureSize = 40;
+battonAngle = 20;
+battonCaptureSize = 60;
 battonCaptureDistance = 20;
 resolution=50;
 
@@ -33,6 +33,7 @@ resolution=50;
 endDiff = edgeSize - hangerLength-(edgeSize*0.15);
 screwDiff = ((edgeOverHang/2));
 battonCapZdiff = (battonCaptureDistance+(pylonConnectorRadius + (pylonConnectorRadius*2.5-pylonConnectorRadius)/2))*tan(battonAngle)-1;
+battonCapZdiffEnd = (battonLength-battonWidth/2+(pylonConnectorRadius + (pylonConnectorRadius*2.5-pylonConnectorRadius)/2))*tan(battonAngle)-1;
 
 
 
@@ -118,9 +119,11 @@ module batton() {
 			}
 			translate([0,0,-1]) cylinder(r=pylonConnectorRadius+feathering, h=pylonTop+2, $fn=resolution);
 			translate([-(pylonWidth+feathering*2)/2,-(pylonWidth+feathering*2)/2,-5]) cube([pylonWidth+feathering*2, pylonWidth+feathering*2, 9]);
+			rotate([0,0,45]) translate([-(pylonWidth+feathering*2)/2,-(pylonWidth+feathering*2)/2,-5]) cube([pylonWidth+feathering*2, pylonWidth+feathering*2, 9]);
 		}
 
 		translate([battonCaptureDistance,0,battonCapZdiff]) cylinder(r=battonWidth/2, h=battonCaptureSize, $fn=resolution);
+		translate([battonLength-battonWidth/2,0,battonCapZdiffEnd]) cylinder(r=battonWidth/2, h=battonCaptureSize, $fn=resolution);
 	}
 }
 
