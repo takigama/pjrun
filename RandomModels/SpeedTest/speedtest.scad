@@ -35,7 +35,7 @@ translate([29,26,0]) cube([0.2, 2.2, 50]);
 translate([6,26,0]) cube([23, 0.2, 50]);
 
 translate([0,-20,0]) cube([0.2, 10, 50]);
-translate([0,-39,0]) rotate(a=[0,0,90.5]) spiral();
+//translate([0,-39,0]) rotate(a=[0,0,90.5]) spiral();
 
 translate([10,0,0]) cube([10, 0.2, 50]);
 
