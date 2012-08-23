@@ -11,11 +11,6 @@ if(@ARGV < 2) {
 print "Processing ".$ARGV[0]." into ".$ARGV[1]."\n";
 
 # sensible minimum
-$startat = 10;
-if(@ARGV > 2) {
-	$startat = int($ARGV[2]);
-}
-
 $startat = 30;
 if(@ARGV > 2) {
 	$startat = int($ARGV[2]);
@@ -47,5 +42,6 @@ while(<FIN>) {
 	}
 	print FOUT $_;
 }
+print FOUT "M220 S100; back to normal;";
 
 print "Done\n";

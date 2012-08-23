@@ -15,6 +15,7 @@ translate([-5,15,0]) cube([0.2, 20, 50]);
 translate([-5,35,0]) cube([40, 0.2, 50]);
 translate([35,20,0]) cube([0.2, 15.2, 50]);
 translate([0,20,0]) cube([35, 0.2, 50]);
+translate([0,22,0]) cube([35, 0.2, 50]);
 
 // 3
 translate([0,20,0]) cube([0.2, 11,  50]);
